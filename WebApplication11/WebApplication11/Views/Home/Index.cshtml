@@ -1,0 +1,41 @@
+﻿@model IEnumerable<WebApplication11.Models.Product>
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+    </tr>
+
+    @foreach (var prod in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => prod.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => prod.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => prod.Description)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = prod.Id }) |
+                @Html.ActionLink("Details", "Details", new { id = prod.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = prod.Id })
+            </td>
+        </tr>
+    }
+
+</table>
