@@ -1,6 +1,6 @@
 ﻿@model IEnumerable<WebApplication11.Models.Product>
 
-<h2>Index</h2>
+<h2>All products</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -15,6 +15,9 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Quantity)
         </th>
     </tr>
 
@@ -31,8 +34,10 @@
                 @Html.DisplayFor(modelItem => prod.Description)
             </td>
             <td>
+                @Html.DisplayFor(modelItem => prod.Quantity)
+            </td>
+            <td>
                 @Html.ActionLink("Edit", "Edit", new { id = prod.Id }) |
-                @Html.ActionLink("Details", "Details", new { id = prod.Id }) |
                 @Html.ActionLink("Delete", "Delete", new { id = prod.Id })
             </td>
         </tr>

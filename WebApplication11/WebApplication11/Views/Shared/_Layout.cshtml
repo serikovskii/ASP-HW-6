@@ -4,44 +4,36 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My App</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.8.3.js"></script>
 </head>
-<style>
-    #menu{
-        width: 100%;
-        height: 50px;
-        background: #353535;
-        text-align: center;
-    }
-    .actionLink{
-        color: #ffffff;
-        font-size: 25px;
-    }
-    .content{
-        margin-bottom: 20px;
-    }
-    .footer {
-        text-align: center;
-        background: #353535;
-        width: 100%;
-        height: 50px;
-    }
-    p {
-        color: #ffffff;
-        font-size: 15px;
-    }
-</style>
 <body>
-    <div class="header">
-        <div id="menu">
-            @Html.ActionLink("My app", "Index", "Home", new { area = "" }, new { @class = "actionLink" })
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Main", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav"></ul>
+            </div>
         </div>
     </div>
-    <div class="content">
+
+    <div class="container body-content">
         @RenderBody()
-    </div>
-    <div class="footer">
-        <p>Copyright Azat</p>
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Azat Mukushev</p>
+        </footer>
     </div>
 
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
 </body>
 </html>
